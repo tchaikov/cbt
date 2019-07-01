@@ -88,12 +88,14 @@ class Radosbench(Benchmark):
 
         #determine rados version
         rados_version_str = self.get_rados_version()
+        logger.info('rados version str: %s', rados_version_str)
 
         m = re.findall("version (\d+)", rados_version_str)
         if not m:
            m = re.findall("version v(\d+)", rados_version_str)
 
         rados_version = int(m[0])
+        logger.info('rados version: %r', rados_version)
 
         # Time to run
         runtime = 0 
