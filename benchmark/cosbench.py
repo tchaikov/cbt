@@ -49,6 +49,7 @@ class Cosbench(Benchmark):
         stderr = self._filter_ssh_output(stderr)
         if stderr:
             logger.error(stderr)
+            time.sleep(65535)
 
     def _do_ctrl(self, cmd_fmt, **kwargs):
         cmd = cmd_fmt.format(**kwargs)
